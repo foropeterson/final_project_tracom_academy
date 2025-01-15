@@ -21,38 +21,33 @@ function BookParking() {
   // Function to calculate the parking fee
   const calculateFee = (durationInMs, vehicleType) => {
     const rates = {
-      car: 5, // $5 per hour
-      motorcycle: 2, // $2 per hour
-      truck: 10, // $10 per hour
+      car: 5, 
+      motorcycle: 2,
+      truck: 10, 
     };
 
-    const durationInHours = Math.ceil(durationInMs / (1000 * 60 * 60)); // Convert milliseconds to hours
+    const durationInHours = Math.ceil(durationInMs / (1000 * 60 * 60));
     return rates[vehicleType] * durationInHours;
   };
 
-  // Handle booking submission
   const handleBooking = async () => {
-    const duration = new Date(endTime) - new Date(startTime); // Calculate duration in milliseconds
-    const totalFee = calculateFee(duration, spot.vehicle_type); // Calculate total fee
+    const duration = new Date(endTime) - new Date(startTime);
+    const totalFee = calculateFee(duration, spot.vehicle_type);
 
     try {
-      // Submit booking data to the API
       await axios.post("/api/bookings", {
-        user_id: 1, // Replace with the actual user ID
+        user_id: 1,
         parking_spot_id: spot.id,
         start_time: startTime,
         end_time: endTime,
         total_fee: totalFee,
       });
 
-      // Navigate to the parking page after successful booking
       navigate("/parking");
     } catch (err) {
       console.error("Booking failed", err);
     }
   };
-
-  // Show a loading message if spot data isn't available yet
   if (!spot) return <p>Loading...</p>;
 
   return (
