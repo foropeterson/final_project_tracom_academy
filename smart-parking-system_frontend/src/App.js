@@ -6,12 +6,15 @@ import ParkingSpots from "./pages/ParkingSpots";
 import BookParking from "./pages/BookParking";
 import AdminDashboard from "./pages/AdminDashboard";
 import Navbar from "./components/Navbar";
+import Home from "./pages/Home"; // Import the Home component
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
+        <Route path="/" element={<Home />} />{" "}
+        {/* Add the route for the homepage */}
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/parking" element={<ParkingSpots />} />
