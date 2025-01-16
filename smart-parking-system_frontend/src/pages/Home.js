@@ -1,7 +1,7 @@
 // src/pages/Home.js
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Home.css"; // Make sure to import the CSS file
+import "./Home.css";
 
 const Home = () => {
   return (

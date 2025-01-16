@@ -16,7 +16,14 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <h1>Smart Parking System</h1>
+        <NavLink
+          to="/"
+          style={{textDecoration:"none"}}
+          onClick={closeMenu}
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          <h1>Smart Parking</h1>
+        </NavLink>
       </div>
       <div
         className={`hamburger-menu ${isOpen ? "open" : ""}`}

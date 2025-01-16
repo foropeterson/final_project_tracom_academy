@@ -6,7 +6,7 @@ import ParkingSpots from "./pages/ParkingSpots";
 import BookParking from "./pages/BookParking";
 import AdminDashboard from "./pages/AdminDashboard";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home"; // Import the Home component
+import Home from "./pages/Home";
 
 function App() {
   return (
