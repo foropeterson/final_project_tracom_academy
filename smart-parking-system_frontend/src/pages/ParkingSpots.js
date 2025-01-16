@@ -5,6 +5,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import "./ParkingSpots.css";
 
+
 function ParkingSpots() {
   const [spots, setSpots] = useState([]);
   const [loading, setLoading] = useState(true);

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -15,16 +16,13 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-brand">
         <NavLink
           to="/"
-          style={{textDecoration:"none"}}
           onClick={closeMenu}
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          <h1>Smart Parking</h1>
+          <p>Smart Parking</p>
         </NavLink>
-      </div>
       <div
         className={`hamburger-menu ${isOpen ? "open" : ""}`}
         onClick={toggleMenu}
